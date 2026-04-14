@@ -1,0 +1,30 @@
+const FOOTER = '\n\n*Free-Mini-Bot Link* https://xhclinton.com/minibot\n> 𝐩𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧';
+
+module.exports = {
+    name: 'repo',
+    async execute(socket, msg) {
+
+        const fakeQuoted = {
+            key: { participant: '0@s.whatsapp.net', remoteJid: '0@s.whatsapp.net', id: msg.key.id },
+            message: { conversation: "Verified" },
+            contextInfo: { mentionedJid: [], forwardingScore: 999, isForwarded: true }
+        };
+        const text = `*『 𝚃𝙾𝚇𝙸𝙲-𝙼𝙸𝙽𝙸-𝙱𝙾𝚃 』*
+
+╭───(    \`𝚂𝚢𝚜𝚝𝚎𝚖 𝙸𝚗𝚏𝚘\`    )───
+> ───≫ 🔗 MINI-BOT-INFO ≫ <<───
+> \`々\` 𝐎𝐰𝐧𝐞𝐫 : xh_clinton
+> \`々\` 𝐋𝐢𝐧𝐤 : https://xhclinton.com/minibot
+> \`々\` 𝐒𝐭𝐚𝐭𝐮𝐬 : Public/Stable
+╰──────────────────☉
+
+*Powered by xh_clinton*
+
+*Free-Mini-Bot Link* https://xhclinton.com/minibot
+> 𝐩𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧`;
+
+        await socket.sendMessage(msg.key.remoteJid, {
+            text: text
+        }, { quoted: fakeQuoted });
+    }
+};
